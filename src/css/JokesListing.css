@@ -1,0 +1,22 @@
+.jokes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .joke-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .joke-card p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .joke-meta {
+    font-size: 0.9rem;
+    color: #999999;
+  }
