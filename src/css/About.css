@@ -51,6 +51,12 @@ h1, h2 {
     text-align: center;
   }
 
+  @media screen and (max-width: 640px) {
+    .team-member {
+      width: 100%;
+    }
+  }
+  
   .team-member img {
     width: 100px;
     height: 100px;
