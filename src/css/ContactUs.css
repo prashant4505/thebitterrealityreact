@@ -45,3 +45,23 @@ form {
   button:hover {
     background-color: #e6b800;
   }
+  
+  .alert {
+    padding: 15px;
+    width: 50%;
+    margin: 20px auto; /* Centering the message */
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .alert-success {
+    color: #28a745;
+  }
+  
+  .alert-error {
+    background-color: #dc3545; /* Red color */
+    color: white;
+  }
+  

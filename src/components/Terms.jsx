@@ -41,7 +41,7 @@ const Terms = () => {
 
       {/* Governing Law */}
       <h2>7. Governing Law</h2>
-      <p>These Terms of Use are governed by the laws of [Your Country/State]. Any disputes related to these terms will be resolved in the courts of [Your Country/State].</p>
+      <p>These Terms of Use are governed by the laws of India. Any disputes related to these terms will be resolved in the courts of India.</p>
 
       {/* Changes to Terms */}
       <h2>8. Changes to Terms</h2>
@@ -49,7 +49,7 @@ const Terms = () => {
 
       {/* Contact Us */}
       <h2>9. Contact Us</h2>
-      <p>If you have any questions about these Terms of Use, please contact us at <a href="mailto:terms@thebitterreality.com">terms@thebitterreality.com</a>.</p>
+      <p>If you have any questions about these Terms of Use, please contact us at <a href="mailto:info@thebitterreality.com">info@thebitterreality.com</a>.</p>
     </div>
   );
 }

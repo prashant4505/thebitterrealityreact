@@ -43,7 +43,7 @@ const Privacy = () => {
         <li>Opt-out of receiving newsletters or marketing emails.</li>
         <li>Request a copy of the data we hold about you.</li>
       </ul>
-      <p>To exercise these rights, please <a href="mailto:privacy@thebitterreality.com">contact us</a>.</p>
+      <p>To exercise these rights, please <a href="mailto:info@thebitterreality.com">contact us</a>.</p>
 
       {/* Changes to This Policy */}
       <h2>6. Changes to This Policy</h2>
@@ -51,7 +51,7 @@ const Privacy = () => {
 
       {/* Contact Us */}
       <h2>7. Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, please reach out to us at <a href="mailto:privacy@thebitterreality.com">privacy@thebitterreality.com</a>.</p>
+      <p>If you have any questions about this Privacy Policy, please reach out to us at <a href="mailto:info@thebitterreality.com">info@thebitterreality.com</a>.</p>
     </div>
   );
 }
