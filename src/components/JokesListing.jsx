@@ -13,7 +13,7 @@ const JokesListing = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          setJokes(data.data);
+          setJokes(data.data.reverse());
         } else {
           setError("Failed to fetch jokes");
         }

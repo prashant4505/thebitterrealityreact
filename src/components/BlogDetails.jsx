@@ -96,7 +96,7 @@ const BlogDetails = () => {
 
         <div className="comment-list">
           {comments.length > 0 ? (
-            comments.map((comment) => (
+            comments.reverse().map((comment) => (
               <div key={comment.id} className="comment">
                 <p>{comment.comment}</p>
                 <div className="comment-meta">- {comment.name}, {new Date(comment.date).toLocaleDateString()}</div>
