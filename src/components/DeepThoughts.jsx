@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../css/DeepThoughts.css";
+import Preloader from "./Preloader";
 
 const DeepThoughts = () => {
   const [thoughts, setThoughts] = useState([]);
@@ -27,7 +28,7 @@ const DeepThoughts = () => {
       <p><em>Because sometimes, reality hits harder than humor.</em></p>
 
       {loading ? (
-        <p>Loading thoughts...</p>
+        <Preloader />
       ) : (
         <div className="thoughts-list">
           {thoughts.length > 0 ? (
