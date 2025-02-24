@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import "../css/JokesListing.css";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Preloader from "./Preloader";
 
 const JokesListing = () => {
@@ -33,7 +34,7 @@ const JokesListing = () => {
         {jokes.length > 0 ? (
           jokes.map((joke) => (
             <div key={joke.id} className="joke-card">
-              <p>{joke.title}</p>
+              <Link className="nav-link" to={`/jokes/${joke.id}`}><h3>{joke.title}</h3></Link>
               <div className="joke-meta">Category: {joke.category} | Posted on {new Date(joke.created_at).toDateString()}</div>
             </div>
           ))

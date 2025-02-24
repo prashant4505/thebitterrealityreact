@@ -12,6 +12,7 @@ import Terms from './components/Terms';
 import Privacy from './components/Privacy';
 import JokesListing from './components/JokesListing';
 import DeepThoughts from './components/DeepThoughts';
+import ShowJoke from './components/ShowJoke';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/blogs/:blogId" element={<BlogDetails />} />
           <Route path="/blogs" element={<BlogListing />} />
           <Route path="/jokes" element={<JokesListing />} />
+          <Route path="/jokes/:jokeId" element={<ShowJoke />} />
           <Route path="/deep-thoughts" element={<DeepThoughts />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/terms" element={<Terms />} />
