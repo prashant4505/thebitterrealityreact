@@ -1,46 +1,51 @@
-import '../css/DeepThoughts.css';
+import { useEffect, useState } from "react";
+import "../css/DeepThoughts.css";
 
 const DeepThoughts = () => {
+  const [thoughts, setThoughts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchThoughts = async () => {
+      try {
+        const response = await fetch("https://api.thebitterreality.com/api/deep-thoughts");
+        const data = await response.json();
+        setThoughts(data);
+      } catch (error) {
+        console.error("Error fetching deep thoughts:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchThoughts();
+  }, []);
+
   return (
     <div className="container">
-      {/* Deep Thoughts Header */}
       <h1>Deep Thoughts</h1>
       <p><em>Because sometimes, reality hits harder than humor.</em></p>
 
-      {/* Deep Thoughts Listing */}
-      <div className="thoughts-list">
-        {/* Thought 1 */}
-        <div className="thought-card">
-          <p>Is happiness just a myth created by coffee companies?</p>
-          <div className="thought-meta">- Anonymous, February 23, 2025</div>
+      {loading ? (
+        <p>Loading thoughts...</p>
+      ) : (
+        <div className="thoughts-list">
+          {thoughts.length > 0 ? (
+            thoughts.map((thought) => (
+              <div key={thought.id} className="thought-card">
+                <p>{thought.content}</p>
+                <div className="thought-meta">
+                  - {thought.user.name}, {new Date(thought.created_at).toLocaleDateString()}
+                </div>
+              </div>
+            ))
+          ) : (
+            <p>No thoughts available.</p>
+          )}
         </div>
-
-        {/* Thought 2 */}
-        <div className="thought-card">
-          <p>We’re all just stars with amnesia, trying to remember where we came from.</p>
-          <div className="thought-meta">- Anonymous, February 23, 2025</div>
-        </div>
-
-        {/* Thought 3 */}
-        <div className="thought-card">
-          <p>The more you know, the more you realize how little you know.</p>
-          <div className="thought-meta">- Anonymous, February 23, 2025</div>
-        </div>
-
-        {/* Thought 4 */}
-        <div className="thought-card">
-          <p>If life is a game, why does it feel like I’m always losing?</p>
-          <div className="thought-meta">- Anonymous, February 23, 2025</div>
-        </div>
-
-        {/* Thought 5 */}
-        <div className="thought-card">
-          <p>Time is the one thing we can’t buy, yet we waste it so freely.</p>
-          <div className="thought-meta">- Anonymous, February 23, 2025</div>
-        </div>
-      </div>
+      )}
     </div>
   );
-}
+};
 
 export default DeepThoughts;

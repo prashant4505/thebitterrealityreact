@@ -1,6 +1,6 @@
 import '../css/BlogDetails.css';
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Preloader from "./Preloader";
 
 const BlogDetails = () => {
@@ -81,7 +81,7 @@ const BlogDetails = () => {
         <h1>{blog.title}</h1>
         <img src={`https://api.thebitterreality.com/storage/${blog.image}`} alt={blog.title} />
         <div className="blog-meta">
-          <p>By <a href="/">{blog.user_name}</a> | Published on {new Date(blog.created_at).toLocaleDateString()}</p>
+          <p>By  <Link className="nav-link" to={`/blogs/${blog.id}`}>{blog.user_name}</Link> | Published on {new Date(blog.created_at).toLocaleDateString()}</p>
         </div>
       </div>
 
