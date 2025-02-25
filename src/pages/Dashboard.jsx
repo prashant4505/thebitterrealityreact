@@ -84,7 +84,7 @@ const Dashboard = () => {
 
         <div class="card">
           <h2>Total Thoughts</h2>
-          <p>6</p>
+          <p>{count?.deep_thoughts}</p>
           <Link to="/deep-thoughts" className="btn link-btn">Show Thoughts</Link>
         </div>
       </div>
