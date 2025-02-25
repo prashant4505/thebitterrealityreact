@@ -4,9 +4,8 @@ import { AuthContext } from "../context/AuthContext";
 const UserPage = () => {
   const { user, logout } = useContext(AuthContext);
   return (
-    <div>
-      <h2>User Page</h2>
-      <h3>Hello {user?.name}!</h3>
+    <div className="container">
+      <h2>Welcome, {user?.name}!</h2>
       <button onClick={logout}>Logout</button>
     </div>
   )

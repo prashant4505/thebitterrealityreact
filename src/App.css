@@ -68,7 +68,8 @@ nav a:hover {
   margin-top: 10px;
 }
 
-.hero button {
+.hero button,
+.link-btn {
   background-color: #ffcc00;
   color: #1a1a1a;
   border: none;
@@ -78,8 +79,15 @@ nav a:hover {
   margin-top: 20px;
 }
 
-.hero button:hover {
+.hero button:hover,
+.link-btn:hover {
   background-color: #e6b800;
+}
+
+.btn.link-btn {
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: unset;
 }
 
 /* Featured Content Section */

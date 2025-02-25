@@ -29,10 +29,26 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Logout function
-  const logout = () => {
-    setUser(null);
-    setPermissions([]);
+  // Logout function with API call
+  const logout = async () => {
+    if (!user?.token) return;
+
+    try {
+      await axios.post(
+        "https://api.thebitterreality.com/api/logout",
+        {}, // Empty body
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`, // Send token for logout
+          },
+        }
+      );
+    } catch (error) {
+      console.error("Logout failed:", error.response ? error.response.data : error.message);
+    } finally {
+      setUser(null);
+      setPermissions([]);
+    }
   };
 
   return (
