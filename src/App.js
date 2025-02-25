@@ -13,6 +13,7 @@ import Privacy from './components/Privacy';
 import JokesListing from './components/JokesListing';
 import DeepThoughts from './components/DeepThoughts';
 import ShowJoke from './components/ShowJoke';
+import MusicPlayer from "./components/MusicPlayer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/music" element={<MusicPlayer />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       <Footer />
