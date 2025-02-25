@@ -58,7 +58,6 @@ const BlogDetails = () => {
 
     try {
       const response = await fetch(`https://api.thebitterreality.com/api/blogs/${blogId}/comments`, requestOptions);
-      console.log(response);
       
       if (!response.ok) {
         throw new Error("Failed to post comment");

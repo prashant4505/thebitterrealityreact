@@ -35,7 +35,7 @@ const Dashboard = () => {
         }
 
         const result = await response.json();
-        console.log("API Response:", result); // Debugging
+        // console.log("API Response:", result); // Debugging
 
         setCount(result.data); // Extract "data" object
       } catch (err) {

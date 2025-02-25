@@ -16,7 +16,6 @@ const BlogListing = () => {
           throw new Error("Failed to fetch blogs");
         }
         const data = await response.json();
-        console.log(data.blogs.data);
         setBlogs(data.blogs.data);
       } catch (error) {
         setError(error.message);
