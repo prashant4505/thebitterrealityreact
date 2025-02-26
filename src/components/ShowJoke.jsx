@@ -5,6 +5,7 @@ import Preloader from "./Preloader";
 
 const ShowJoke = () => {
   const [joke, setJoke] = useState(null);  // State to store joke data
+  const [error, setError] = useState(null); // State for error handling
   const { jokeId } = useParams();
 
   // Fetch joke data from API
@@ -15,14 +16,21 @@ const ShowJoke = () => {
         const data = await response.json();
         if (data.success) {
           setJoke(data.data);  // Store the joke data in state
+        } else {
+          setError("Failed to fetch the joke data.");
         }
       } catch (error) {
+        setError("Error fetching joke.");
         console.error("Error fetching joke:", error);
       }
     };
 
     fetchJoke();
   }, [jokeId]);  // Only run when jokeId changes
+
+  if (error) {
+    return <div className="error">{error}</div>; // Show error message if there is an error
+  }
 
   if (!joke) {
     return <Preloader />; // Show loading state until the data is fetched
@@ -32,9 +40,7 @@ const ShowJoke = () => {
     <div className="container">
       <h1>{joke.title}</h1>
       <div className="joke-card">
-        <p>
-          <div className="blog-content" dangerouslySetInnerHTML={{ __html: joke.description }} />  
-        </p>
+        <div className="blog-content" dangerouslySetInnerHTML={{ __html: joke.description }} />  
         <div className="joke-meta">
           Category: {joke.category} | Posted on {new Date(joke.created_at).toLocaleDateString()}
         </div>

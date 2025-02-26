@@ -21,3 +21,11 @@
     color: #999999;
   }
   
+  .pagination button {
+    margin: 2px;
+    width: fit-content;
+  }
+
+  .pagination button.active {
+    background-color: #b08d00;
+  }
