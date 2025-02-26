@@ -32,7 +32,9 @@ const ShowJoke = () => {
     <div className="container">
       <h1>{joke.title}</h1>
       <div className="joke-card">
-        <p>{joke.description}</p>
+        <p>
+          <div className="blog-content" dangerouslySetInnerHTML={{ __html: joke.description }} />  
+        </p>
         <div className="joke-meta">
           Category: {joke.category} | Posted on {new Date(joke.created_at).toLocaleDateString()}
         </div>
