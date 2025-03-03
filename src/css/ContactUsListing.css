@@ -1,0 +1,35 @@
+.contact-table {
+    padding: 20px;
+  }
+  
+  .contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .contact-table th, .contact-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .contact-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .contact-table tr:nth-child(even) {
+    background-color: #292929;
+  }
+  
+  .contact-table tr:hover {
+    background-color: #090909;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,35 @@
+.user-listing {
+    padding: 20px;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .user-table tr:nth-child(even) {
+    background-color: #292929;
+  }
+  
+  .user-table tr:hover {
+    background-color: #090909;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  

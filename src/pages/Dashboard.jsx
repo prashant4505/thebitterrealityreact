@@ -5,10 +5,9 @@ import { AuthContext } from "../context/AuthContext";
 import '../css/Dashboard.css';
 
 const Dashboard = () => {
-  const { user, logout } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(null);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -16,7 +15,6 @@ const Dashboard = () => {
       const token = user?.token;
 
       if (!token) {
-        setError("Access token is missing. Redirecting to login...");
         setTimeout(() => navigate("/login"), 2000);
         return;
       }
@@ -40,14 +38,13 @@ const Dashboard = () => {
         setCount(result.data); // Extract "data" object
       } catch (err) {
         console.error("Error fetching data:", err);
-        setError(err.message);
       } finally {
         setLoading(false);
       }
     };
 
     fetchCount();
-  }, [navigate]);
+  }, [navigate, user?.token]);
 
   if (loading) {
     return <Preloader />; // Show Preloader while loading
@@ -61,7 +58,7 @@ const Dashboard = () => {
         <div class="card">
           <h2>Total Users</h2>
           <p>{count?.user_count}</p>
-          <Link to="/dashboard" className="btn link-btn">Show Users</Link>
+          <Link to="/users" className="btn link-btn">Show Users</Link>
         </div>
 
         <div class="card">
@@ -79,7 +76,7 @@ const Dashboard = () => {
         <div class="card">
           <h2>Total Contact Us</h2>
           <p>{count?.contact_message_count}</p>
-          <Link to="/dashboard" className="btn link-btn">Show Contact Us</Link>
+          <Link to="/contacts" className="btn link-btn">Show Contact Us</Link>
         </div>
 
         <div class="card">

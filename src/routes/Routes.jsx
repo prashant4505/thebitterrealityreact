@@ -19,6 +19,9 @@ import DeepThoughts from '../components/DeepThoughts';
 import ShowJoke from '../components/ShowJoke';
 import MusicPlayer from "../components/MusicPlayer";
 import BlogPost from '../components/blogs/BlogPost';
+import UserListing from "../components/UserListing";
+import ContactUsListing from '../components/ContactUsListing';
+import ContactDetails from '../components/ContactDetails';
 
 const PrivateRoute = ({ children, requiredPermissions }) => {
   const { user, permissions } = useContext(AuthContext);
@@ -71,6 +74,30 @@ const AppRoutes = () => {
             element={
               <PrivateRoute requiredPermissions={["admin","content editor"]}>
                 <AdminPage />
+              </PrivateRoute>
+            }
+            />
+            <Route
+            path="/users"
+            element={
+              <PrivateRoute requiredPermissions={["admin"]}>
+                <UserListing />
+              </PrivateRoute>
+            }
+            />
+            <Route
+            path="/contacts"
+            element={
+              <PrivateRoute requiredPermissions={["admin"]}>
+                <ContactUsListing />
+              </PrivateRoute>
+            }
+            />
+            <Route
+            path="/contact/:id"
+            element={
+              <PrivateRoute requiredPermissions={["admin"]}>
+                <ContactDetails />
               </PrivateRoute>
             }
             />
