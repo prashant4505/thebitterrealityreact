@@ -3,7 +3,7 @@ const Privacy = () => {
     <div className="container">
       {/* Privacy Policy Header */}
       <h1>Privacy Policy</h1>
-      <p><em>Last updated: October 2023</em></p>
+      <p><em>Last updated: February 2025</em></p>
 
       {/* Introduction */}
       <p>Welcome to <strong>The Bitter Reality</strong>! We value your privacy as much as we value a good cup of coffee (and that’s a lot). This Privacy Policy explains how we collect, use, and protect your information when you visit our website. By using our site, you agree to the terms outlined here.</p>

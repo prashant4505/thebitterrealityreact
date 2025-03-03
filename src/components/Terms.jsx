@@ -3,7 +3,7 @@ const Terms = () => {
     <div className="container">
       {/* Terms of Use Header */}
       <h1>Terms of Use</h1>
-      <p><em>Last updated: October 2023</em></p>
+      <p><em>Last updated: February 2025</em></p>
 
       {/* Introduction */}
       <p>Welcome to <strong>The Bitter Reality</strong>! By accessing or using our website, you agree to comply with and be bound by the following terms and conditions. If you don’t agree with these terms, please don’t use our site. We reserve the right to update these terms at any time, so check back occasionally to stay in the loop.</p>
@@ -14,7 +14,8 @@ const Terms = () => {
 
       {/* Intellectual Property */}
       <h2>2. Intellectual Property</h2>
-      <p>All content on this website, including text, graphics, logos, and images, is the property of <strong>The Bitter Reality</strong> and is protected by copyright laws. You may not reproduce, distribute, or use any content without our prior written permission. However, sharing our content on social media with proper credit is always welcome!</p>
+
+      <p>All content on this website, including text, graphics, logos, and images, belongs to <strong>The Bitter Reality</strong>. You may not reproduce, distribute, or use any content without our prior written permission. However, sharing our content on social media with proper credit is always welcome!</p>
 
       {/* User Conduct */}
       <h2>3. User Conduct</h2>
