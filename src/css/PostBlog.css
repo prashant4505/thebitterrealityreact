@@ -1,0 +1,32 @@
+.file-upload {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: #ddd;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s;
+}
+
+.file-upload:hover {
+    border-color: #888;
+    background-color: #333;
+}
+
+.file-upload::file-selector-button {
+    background-color: #ff4d00;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.file-upload::file-selector-button:hover {
+    background-color: #cc3e00;
+}

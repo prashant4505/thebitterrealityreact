@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import Preloader from '../Preloader';
+import '../../css/PostBlog.css';
 
 const BlogPost = () => {
   const [title, setTitle] = useState("");
@@ -106,7 +107,7 @@ const BlogPost = () => {
           <label className="form-label">Image</label>
           <input
             type="file"
-            className="form-control"
+            className="form-control file-upload"
             onChange={(e) => setImage(e.target.files[0])}
           />
         </div>
