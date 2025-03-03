@@ -47,23 +47,25 @@ const BlogDetails = () => {
   const handleCommentSubmit = async () => {
     const token = sessionStorage.getItem("access_token");
     if (!comment.trim()) return;
+
     const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         ...(token && { Authorization: `Bearer ${token}` }),
       },
-      body: JSON.stringify({ comment:comment }),
+      body: JSON.stringify({ comment }),
     };
 
     try {
       const response = await fetch(`https://api.thebitterreality.com/api/blogs/${blogId}/comments`, requestOptions);
-      
       if (!response.ok) {
         throw new Error("Failed to post comment");
       }
       const data = await response.json();
-      setComments((prev) => [...prev, data.comment]);
+
+      // Add the new comment at the beginning
+      setComments((prev) => [data.comment, ...prev]);
       setComment("");
     } catch (error) {
       console.error(error);
@@ -80,7 +82,9 @@ const BlogDetails = () => {
         <h1>{blog.title}</h1>
         <img src={`https://api.thebitterreality.com/storage/${blog.image}`} alt={blog.title} />
         <div className="blog-meta">
-          <p>By  <Link className="nav-link" to={`/blogs/${blog.id}`}>{blog.user_name}</Link> | Published on {new Date(blog.created_at).toLocaleDateString()}</p>
+          <p>
+            By <Link className="nav-link" to={`/blogs/${blog.id}`}>{blog.user_name}</Link> | Published on {new Date(blog.created_at).toLocaleDateString()}
+          </p>
         </div>
       </div>
 
@@ -95,12 +99,14 @@ const BlogDetails = () => {
 
         <div className="comment-list">
           {comments.length > 0 ? (
-            comments.reverse().map((comment) => (
-              <div key={comment.id} className="comment">
-                <p>{comment.comment}</p>
-                <div className="comment-meta">- {comment.name}, {new Date(comment.date).toLocaleDateString()}</div>
-              </div>
-            ))
+            comments
+              .sort((a, b) => new Date(b.date) - new Date(a.date)) // Ensure newest comments appear first
+              .map((comment) => (
+                <div key={comment.id} className="comment">
+                  <p>{comment.comment}</p>
+                  <div className="comment-meta">- {comment.name}, {new Date(comment.date).toLocaleDateString()}</div>
+                </div>
+              ))
           ) : (
             <p>No comments yet.</p>
           )}
