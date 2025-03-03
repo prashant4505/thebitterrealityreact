@@ -1,3 +1,7 @@
+.user-listing.container {
+    overflow: auto;
+}
+
 .user-listing {
     padding: 20px;
   }

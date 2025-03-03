@@ -1,3 +1,7 @@
+.contact-listing.container {
+    overflow: auto;
+}
+
 .contact-table {
     padding: 20px;
   }
